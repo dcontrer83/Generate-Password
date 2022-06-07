@@ -11,32 +11,40 @@ function writePassword() {
 
 }
 
+
+
 // Add event listener to generate button
 //generateBtn.addEventListener("click", writePassword);
 
 generateBtn.addEventListener("click", function() {
+  
+  function invalidNum() {
+    passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+  
+  };
+  
   let passwordLength = Number(window.prompt("Type a number for the length of the desired password from 8 - 128 characters.", ""));
 
   if (isNaN(passwordLength)) {
     for (passwordLength; isNaN(passwordLength); ){
-      passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+      invalidNum();
     }
   }
 
   if (8 <= passwordLength === false) {
     for (passwordLength; 8 > passwordLength; ) {
-      passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+      invalidNum();
       if (isNaN(passwordLength)) {
         for (passwordLength; isNaN(passwordLength); ){
-          passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+          invalidNum();
         }
       }
       if (passwordLength > 128) {
         for (passwordLength; passwordLength > 128; ) {
-        passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
-        if (isNaN(passwordLength)) {
+          invalidNum();
+          if (isNaN(passwordLength)) {
           for (passwordLength; isNaN(passwordLength); ){
-            passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+            invalidNum();
           }
         }}
       }
@@ -45,18 +53,18 @@ generateBtn.addEventListener("click", function() {
 
   else if (passwordLength > 128) {
     for (passwordLength; passwordLength > 128; ) {
-      passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+      invalidNum();
       if (isNaN(passwordLength)) {
         for (passwordLength; isNaN(passwordLength); ){
-          passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+          invalidNum();
         }
       }
       if (passwordLength < 8) {
         for (passwordLength; 8 > passwordLength; ) {
-        passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
-        if (isNaN(passwordLength)) {
+          invalidNum();
+          if (isNaN(passwordLength)) {
           for (passwordLength; isNaN(passwordLength); ){
-            passwordLength = Number(window.prompt("Please type a number from 8 - 128", ""));
+            invalidNum();
           }
         }}
       }
